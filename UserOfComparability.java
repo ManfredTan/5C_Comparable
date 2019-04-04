@@ -24,7 +24,7 @@ public class UserOfComparability {
         // reportRelationship( "Point vs. distant point", p0
                           // , new Point( 100., 2.), "negative int");
         // System.out.println( "---- end of Point comparisons ----");
-        
+
         System.out.println( System.lineSeparator()
                           + "Date comparisons");
     }
@@ -33,7 +33,7 @@ public class UserOfComparability {
     /**
       run one test
      */
-    private static void reportRelationship 
+    private static void reportRelationship
       ( String description
       , Point a
       , Point b
@@ -41,16 +41,16 @@ public class UserOfComparability {
       ) {
         System.out.println( description);
 
-        // check 
+        // check
         System.out.println(
             a + " compareTo " + b + ": "
           + a.compareTo( b)
-            /* eventually expecting a compiler warning: 
+            /* eventually expecting a compiler warning:
               warning: [unchecked] unchecked call to compareTo(T) as a member of the raw type Comparable
               where T is a type-variable:
                 T extends Object declared in interface Comparable
              */
-          
+
           + " ...expecting " + expect
           + System.lineSeparator());
      }
