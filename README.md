@@ -1,1 +1,1 @@
-# play with `Comparable`
+# play with `Comparable` types
