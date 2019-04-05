@@ -5,9 +5,26 @@ public class Point{
     private double xcor;
     private double ycor;
 
-    public int compareTo( Object otherObj){
-        // Fix this. Double.compare helped me.
-        return 0; // temp: all Points are One
+    /**
+      @return  a negative integer, zero, or a positive integer
+      depending on whether this Point is closer,
+      equidistant, or farther than the Point referred to
+      by the parameter.
+     */
+    public int compareTo( Point otherObj){
+        /* Use the Pythagorean theorem.
+           Double.compare helped me.
+           If the math is a problem, use a simpler
+           relationship, like "higher is bigger"
+           and change the tests accordingly */
+        int currentPoint = distance();
+        int otherPoint = otherObj.distance();
+
+        if (xcor == otherObj.xcoor() && ycor == otherObj.ycoor() ) return 0;
+        if (currentPoint == otherPoint) return 0;
+        return currentPoint - otherPoint;
+
+
     }
 
     // -------- previously-written code ----------
@@ -23,5 +40,18 @@ public class Point{
     public String toString() {
         return "(" + xcor + "," + ycor + ")";
     }
+
+    public int distance() {
+        return (int)(xcor * xcor + ycor * ycor);
+    }
+
+    public double xcoor() {
+        return xcor;
+    }
+
+    public double ycoor() {
+        return ycor;
+    }
+
 
 }
